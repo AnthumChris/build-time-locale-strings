@@ -5,7 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc --watch"
+    "dev": "tsc --watch --noEmit"
   },
   "keywords": [],
   "author": "",

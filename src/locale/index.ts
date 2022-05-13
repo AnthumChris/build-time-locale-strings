@@ -11,25 +11,22 @@ type TranslatedId = keyof (
   | typeof en
   | typeof es
   | typeof de
-  & typeof untranslated
 )
-type StringId = UntranslatedId | TranslatedId
+type LocaleStringId = UntranslatedId | TranslatedId
 
 // simulates browser-provided locale code
 let currentLocale: Locale = 'en'
-
-// util to be provided in dev API. Use untranslated values (if exists) first
-function str(id: StringId) {
-  return untranslated[id as UntranslatedId] ?? locales[currentLocale][id as TranslatedId]
-}
-
-// example function for simulating browser-provided Locale
-function tmpSetBrowserLocale(locale: Locale) {
+function setBrowserLocale(locale: Locale) {
   currentLocale = locale
 }
 
+// util to be provided in dev API. Use untranslated values (if exists) first
+function str(id: LocaleStringId) {
+  return untranslated[id as UntranslatedId] ?? locales[currentLocale][id as TranslatedId]
+}
+
 export {
+  setBrowserLocale,
   str,
-  tmpSetBrowserLocale,
 }
 
