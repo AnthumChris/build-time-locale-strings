@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "listEmittedFiles": true,
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "outDir": "./build",
+    "preserveWatchOutput": false,
+    "strict": true,
+    "target": "esnext",
+  }
+}
